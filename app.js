@@ -31,10 +31,9 @@ window.addEventListener('load', () => {
                 this.cart.forEach(element => {
                     total++;
                 });
-                if(total == 0) { data.message = 'No Item'; } 
-                else if (total == 0) { data.message = ' item'; } 
-                else { data.message = 'item'; }
-                data.number = total;
+                if(total == 0) { data.message = 'No Item'; data.number = '';} 
+                else if (total == 1) { data.message = ' item'; data.number = total;  } 
+                else { data.message = 'items'; data.number = total;  }
                 return data;
             },
             productsCount() {
@@ -43,10 +42,9 @@ window.addEventListener('load', () => {
                 this.products.forEach(element => {
                     total++;
                 });
-                if(total == 0) { data.message = 'No Item'; } 
-                else if (total == 0) { data.message = ' item'; } 
-                else { data.message = 'item'; }
-                data.number = total;
+                if(total == 0) { data.message = 'No Item'; data.number = '';} 
+                else if (total == 1) { data.message = ' item'; data.number = total;  } 
+                else { data.message = 'items'; data.number = total;  }
                 return data;
             },
         },
