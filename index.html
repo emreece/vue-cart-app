@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="http://unpkg.com/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+    <title>Vue</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <p v-if="isLoading">Loading</p>
+            <div class="row">
+                <div class="col-lg-6">
+                   <h2>Products ({{productsCount.number}} {{productsCount.message}}) </h2>
+                   <div class="products">
+                       <div class="item card my-2 p-3" v-for="(item,index) in products">
+                          <h1>{{item.name}}</h1>
+                          <p>{{item.price}} $</p>
+                          <div v-if="item.isAvaliable">Is Avaliable</div>
+                          <div v-if="!item.isAvaliable">No Avaliable</div>
+                          <a v-if="item.isAvaliable" href="#" v-on:click="moveToCart(index)">Add To Cart</a>
+                       </div>
+                   </div>
+                </div>
+                <div class="col-lg-6">
+                   <h2>Cart ({{cartsCount.number}} {{cartsCount.message}}) <span>Cart Total:{{cartTotal}} $</span></h2> 
+                   <div class="cart">
+                       <div class="item card my-2 p-3" v-for="(item,index)  in cart">
+                          <h1>{{item.name}}</h1>
+                          <p>{{item.price}} $</p>
+                          <div v-if="item.isAvaliable">Is Avaliable</div>
+                          <a href="#" v-on:click="moveToProducts(index)">Remove From Cart</a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+    "products": [
+        {
+            "name": "product1", 
+            "isAvaliable":true,
+            "price": "100"
+        },
+        {
+            "name": "product2", 
+            "isAvaliable":true,
+            "price": "200"
+        },
+        {
+            "name": "product3", 
+            "isAvaliable":false,
+            "price": "300"
+        },
+        {
+            "name": "product4", 
+            "isAvaliable":true,
+            "price": "400"
+        }
+    ],
+    "cart": [
+        {
+            "name": "product5", 
+            "isAvaliable":true,
+            "price": "200"
+        }
+    ]
+}
